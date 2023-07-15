@@ -1,0 +1,9 @@
+.display-flex{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
