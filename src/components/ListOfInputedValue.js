@@ -1,11 +1,11 @@
 import React from 'react'
 import ToDoItem from './ToDoItem'
-function ListOfInputedValue({listOfTodos,  setListOfTodos}) {
+function ListOfInputedValue({setListOfTodos, filteredItems, listOfTodos}) {
   return (
     <div>
       <ul>
         {
-          listOfTodos.map((listOfTodo)=> <ToDoItem listOfTodo={listOfTodo} listOfTodos={listOfTodos}  setListOfTodos={ setListOfTodos} />)
+          filteredItems.map((listOfTodo)=> <ToDoItem listOfTodo={listOfTodo} listOfTodos={listOfTodos}  setListOfTodos={ setListOfTodos} />)
         }
       </ul>
       

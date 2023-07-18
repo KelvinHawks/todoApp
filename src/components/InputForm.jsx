@@ -1,6 +1,6 @@
 import React from 'react'
 
-function InputForm({inputedValue, setInputedValue, setListOfTodos, listOfTodos}) {
+function InputForm({inputedValue, setInputedValue, setListOfTodos, listOfTodos, setStatus, handleFilteredItems}) {
 
   const handleChange = (e)=>{
     setInputedValue(e.target.value)
@@ -17,9 +17,11 @@ function InputForm({inputedValue, setInputedValue, setListOfTodos, listOfTodos})
         }
       ]
   )
-    setInputedValue('')
+  
   }
-
+const filterHandler = (e)=>{
+  setStatus(e.target.value);
+}
   return (
     <form>
         <input
@@ -28,10 +30,10 @@ function InputForm({inputedValue, setInputedValue, setListOfTodos, listOfTodos})
          value={inputedValue}
          />
         <button onClick={handleSubmit}><i className="fa-solid fa-square-plus"></i></button>
-        <select name="" id="">
+        <select name="listOfTodos" onChange={filterHandler} >
           <option value="all">All</option>
-          <option value="all">complete</option>
-          <option value="all">uncomplete</option>
+          <option value="complete">complete</option>
+          <option value="uncomplete">uncomplete</option>
         </select>
     </form>
   )
